@@ -21,7 +21,7 @@ func Init() {
 		log.Fatalln(err)
 	}
 
-	Db.AutoMigrate(&models.Response{}, &models.Request{})
+	Db.AutoMigrate(&models.Request{}, &models.RequestCount{})
 	// return db
 	// return nil
 }

@@ -17,7 +17,9 @@ import (
 // - ambil url aslinya
 // - redirect kesitu
 func main() {
-	app := fiber.New()
+	app := fiber.New(fiber.Config{
+		ProxyHeader: fiber.HeaderXForwardedFor,
+	})
 	config.Init()
 
 	storeUrlHandler := new(handler.StoreUrl)
